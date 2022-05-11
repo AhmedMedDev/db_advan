@@ -17,7 +17,7 @@ class CreateSalesPersonsTable extends Migration
         Schema::create('sales_persons', function (Blueprint $table) {
             $table->uuid('id')->default(DB::raw('(UUID())'))->primary();
             $table->string('name', 50);
-            $table->string('phone', 13);
+            $table->string('phone', 13)->nullable();
             $table->timestamps();
         });
     }
