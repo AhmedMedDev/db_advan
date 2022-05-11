@@ -19,7 +19,6 @@ class CreateCarsTable extends Migration
             $table->string('model');
             $table->string('manufacturer');
             $table->float('price');
-            $table->timestamps();
         });
     }
 

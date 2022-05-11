@@ -20,7 +20,6 @@ class CreateOptionCarsTable extends Migration
             $table->float('price');
             $table->uuid('serial_no');
             $table->foreign('serial_no')->references('serial_no')->on('cars');
-            $table->timestamps();
         });
     }
 

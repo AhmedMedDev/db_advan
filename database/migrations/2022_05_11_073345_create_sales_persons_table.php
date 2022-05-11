@@ -18,7 +18,6 @@ class CreateSalesPersonsTable extends Migration
             $table->uuid('id')->default(DB::raw('(UUID())'))->primary();
             $table->string('name', 50);
             $table->string('phone', 13)->nullable();
-            $table->timestamps();
         });
     }
 
