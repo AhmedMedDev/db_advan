@@ -3,14 +3,18 @@ FROM cars
 WHERE manufacturer = 'Toyota' 
 AND model = 'Corolla';
 
+Cars::where('manufacturer', 'Toyota')->where('model', 'Corolla')->get();
 
 SELECT model, price 
 FROM cars
 WHERE price BETWEEN 150000 AND 250000
 
+Cars::whereBetween('price', [150000, 250000])->get()
 
 SELECT model, price, (price + (price * .07)) AS new_price
 FROM cars
+
+Cars::all()
 
 SELECT cars.serial_no ,model, manufacturer, cars.price, option_cars.option_name, option_cars.price AS option_price , 
 ( SELECT SUM(price) FROM option_cars WHERE option_cars.serial_no = cars.serial_no) AS total_option
