@@ -34,4 +34,13 @@ class Cars extends Model
      * @var bool
      */
     public $timestamps = false;
+
+
+    /**
+     * Get the comments for the blog post.
+     */
+    public function options()
+    {
+        return $this->hasMany('App\Models\OptionCar', 'serial_no', 'serial_no');
+    }
 }
