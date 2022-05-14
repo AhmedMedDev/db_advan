@@ -31,9 +31,11 @@ Cars::with('options')->get()
 
 SELECT * FROM `sales_persons` WHERE name LIKE 's%';
 
+SalesPersons::where('name', 'LIKE', 'S%')->get()
 
 SELECT * FROM `sales_persons` WHERE phone IS null
 
+SalesPersons::whereNull('phone')->get()
 
 SELECT cars.model, cars.price, sales_persons.name, sales.date, sale_price
 FROM `sales` 

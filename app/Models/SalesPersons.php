@@ -7,23 +7,23 @@ use Ramsey\Uuid\Uuid;
 
 class SalesPersons extends Model
 {
-    protected $primaryKey = 'uuid';
-
-    protected $keyType = 'string';
-
-    public $incrementing = false;
-
     protected $fillable = [
         'name',
-        'phone'
+        'phone',
     ];
 
-    // protected static function boot()
-    // {
-    //     parent::boot();
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
 
-    //     static::creating(function (Model $model) {
-    //         $model->setAttribute($model->getKeyName(), Uuid::uuid4());
-    //     });
-    // }
+    protected $table = 'sales_persons';
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 }
