@@ -21,11 +21,13 @@ SELECT cars.serial_no ,model, manufacturer, cars.price, option_cars.option_name,
 FROM cars
 LEFT JOIN option_cars ON (cars.serial_no = option_cars.serial_no)
 
+Cars::with('options')->get()
 
-SELECT cars.serial_no , SUM(option_cars.price) FROM cars
+SELECT cars.serial_no , SUM(option_cars.price) AS total_options FROM cars
 JOIN option_cars ON (cars.serial_no = option_cars.serial_no ) 
 GROUP BY cars.model
 
+Cars::with('options')->get()
 
 SELECT * FROM `sales_persons` WHERE name LIKE 's%';
 
