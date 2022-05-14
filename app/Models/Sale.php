@@ -31,7 +31,7 @@ class Sale extends Model
 
 
     /**
-     * Get the post that owns the comment.
+     * Get the post that owns the comment
      */
     public function car()
     {
@@ -39,7 +39,7 @@ class Sale extends Model
     }
 
     /**
-     * Get the post that owns the comment.
+     * Get the post that owns the comment
      */
     public function person()
     {
