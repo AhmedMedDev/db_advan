@@ -21,6 +21,13 @@ class SalesPersons extends Model
     protected $table = 'sales_persons';
 
     /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
