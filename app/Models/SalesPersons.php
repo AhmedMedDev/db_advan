@@ -33,4 +33,12 @@ class SalesPersons extends Model
      * @var bool
      */
     public $timestamps = false;
+
+        /**
+     * Get the comments for the blog post.
+     */
+    public function sales()
+    {
+        return $this->hasMany('App\Models\Sale', 'sales_person_id', 'id');
+    }
 }

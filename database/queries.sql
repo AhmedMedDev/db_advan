@@ -42,6 +42,7 @@ FROM `sales`
 JOIN sales_persons ON (sales_person_id = sales_persons.id)
 JOIN cars ON (sales.serial_no = cars.serial_no)
 
+Sale::with(['car', 'person'])->get()
 
 SELECT sales_persons.id, sales_persons.name, 
 COUNT(sales.sales_person_id) AS solds_num,
@@ -50,5 +51,8 @@ FROM sales_persons
 LEFT JOIN sales ON (sales_persons.id = sales.sales_person_id)
 GROUP BY sales_persons.id
 
+SalesPersons::with('sales')->get() 
 
 SELECT * FROM `cars` WHERE price = (SELECT MAX(price) FROM cars)
+
+Cars::wherePrice(DB::table('cars')->max('price'))->get()
