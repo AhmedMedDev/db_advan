@@ -18,7 +18,7 @@ class CreateSalesTable extends Migration
             $table->uuid('id')->default(DB::raw('(UUID())'))->primary();
             $table->uuid('sales_person_id');
             $table->foreign('sales_person_id')->references('id')->on('sales_persons');
-            $table->uuid('serial_no');
+            $table->uuid('serial_no')->unique();
             $table->foreign('serial_no')->references('serial_no')->on('cars');
             $table->float('sale_price');
             $table->date('date')->default(DB::raw('CURDATE()'));
